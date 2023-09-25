@@ -16,13 +16,20 @@ def calorieCounterTopThree(data):
     if sublist:
         result.append(sublist)
 
-    total = 0
+    new_list = []
+
     for line in result:
         line = list(map(int, line))
         subtotal = sum(line)
-        if subtotal > total:
-            total = subtotal
-    print(total)
+        new_list.append(subtotal)
+
+         
+
+
+
+    top_three = sorted(new_list, reverse=True)[:3]
+    print(sum(top_three))
+
 
 
 calorieCounterTopThree(data)
